@@ -1,0 +1,43 @@
+
+
+<div class="left-indent">
+    <h1>Update Notification</h1>
+    <br>
+    <form method="post" action="<?php echo htmlspecialchars('?page=notification&action=update&id=') . $id?>">
+
+        <div class="form">
+            <div>
+            <label for="name">Notification Name</label>
+            <input type="text" name="name" id="name" value="<?php echo $line[1]; ?>">
+            <span class="required"><?php echo $msg1 ?></span>
+            </div>
+
+            <div>
+                <label for="type">Notification Type</label>
+                <select name="type" id="type">
+                    <option value="email" <?php echo ($line[2] == 'email' ? 'selected' : '') ?>>Email</option>
+                    <option value="sms" <?php echo ($line[2] == 'sms' ? 'selected' : '') ?>>SMS</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form">
+            <br>
+            <div><label for="content">Notification Content: </label></div><br>
+            <div>
+            <textarea rows="4" cols="50" id="content" name="content"><?php echo putCommaAndEol($line[3]); ?></textarea>
+            <span class="required"><?php echo $msg2 ?></span>
+            </div>
+        </div>
+
+        <input type="hidden" name="submitCheck" value="true">
+
+        <div class="form">
+            <!-- so dumb, change later. want to make the submit button the same width as the text above the multiline box-->
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit">
+        </div>
+
+
+    </form>
+</div>

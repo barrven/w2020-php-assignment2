@@ -1,0 +1,12 @@
+notification_id,name,type,message_content,n_status
+0,HST Notice,email,This is a friendly reminder that your HST bill is due within one week,archived
+24,Test,sms,This is a test notification,active
+25,HST Reminder,sms,Your HST Bill is due within one week,active
+32,This is Monday,email,This notification works%%####Thank you.,active
+33,Testing 2.0,sms,Hello%% please send us one million dollars####yours truly%%####ABC aCcounting,archived
+37,Polite notification,email,Dear client%%####We would like to thank you for being a valuable client for so long.####This is a quick reminder that your tax bill will be due in 30 days.####Sincerely%%##ABC Accounting,active
+38,Test,sms,This is a test notification,active
+39,Thank you message,email,Dear client%%##We are pleased to provide you with notification services.####Thank you for your continued business%%####Sincerely%%##ABC Accounting,active
+40,Happy Holidays,sms,Dear Client%%####We would like to thank you for being a valued customer.####Happy holidays!####Sincerely%%##ABC Accounting,archived
+41,End of Year Tax Bill,email,This is to inform you that your tax bill is due by the end of the current fiscal year.####Sincerely%%##ABC Accounting,active
+42,Warning,sms,Please note that your accounting bills are past due.,active

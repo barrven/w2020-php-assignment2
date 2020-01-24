@@ -1,0 +1,30 @@
+
+    <div class="left-indent">
+        <h1>Search Users</h1>
+        <br>
+        <form class="form" method="post" action="<?php echo htmlspecialchars('?page=user&action=searchResult'); ?>">
+
+            <div>
+            <label for="field">Search field</label>
+            <select name="field" id="field" >
+                <option value=""> &nbsp;&nbsp;</option>
+                <option value="id">User ID</option>
+                <option value="fname">First Name</option>
+                <option value="lname">Last Name</option>
+                <option value="email">Email</option>
+                <option value="phone">Phone</option>
+                <option value="username">Username</option>
+                <option value="position">Position</option>
+                <option value="status">Status</option>
+            </select>
+            </div>
+
+            <div>
+            <label for="searchTerm">Search term </label>
+            <input type="text" id="searchTerm" name="searchTerm">
+            </div>
+
+            <input type="hidden" name="submitCheck" value="true">
+            <input type="submit">
+        </form>
+    </div>

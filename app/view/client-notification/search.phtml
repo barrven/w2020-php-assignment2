@@ -1,0 +1,28 @@
+
+<div class="left-indent">
+    <h1>Search Client Notifications</h1>
+    <br>
+    <form class="form" method="post" action="<?php echo htmlspecialchars('?page=client-notification&action=searchResult'); ?>">
+
+        <div>
+        <label for="field">Search field</label>
+        <select name="field" id="field" >
+            <option value=""> </option>
+            <option value="cn_id">Client-Notification ID</option>
+            <option value="client_id">Client ID</option>
+            <option value="notification_id">Notification ID</option>
+            <option value="start_date">Date (YYYY-MM-DD)</option>
+            <option value="time">Time (HH:MM)</option>
+            <option value="frequency">Frequency</option>
+            <option value="cn_status">Status</option>
+        </select>
+        </div>
+
+        <div>
+        <label for="searchTerm">Search term </label>
+        <input type="text" id="searchTerm" name="searchTerm">
+        </div>
+
+        <input type="submit">
+    </form>
+</div>

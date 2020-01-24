@@ -1,0 +1,65 @@
+
+
+<div class="left-indent">
+    <h1>Add Client Notification</h1>
+    <br>
+    <form class="form" method="post" action="<?php echo htmlspecialchars('?page=client-notification&action=add')?>">
+
+        <div>
+        <label for="client">Select Client</label>
+        <select name="client-id" id="client">
+            <option value=""> &nbsp; </option>
+            <?php
+            //loop through list of clients. make two arrays in model: $clientIds, $clientInfo
+            for ($i = 0; $i<sizeof($clientIds); $i++){
+                $client =   $clientInfo[$i]['id'] . ', ' .
+                            $clientInfo[$i]['company_name'] .', '.
+                            $clientInfo[$i]['contact_fname'] .', ' .
+                            $clientInfo[$i]['contact_lname'];
+                echo "<option value='$clientIds[$i]'>$client</option>";
+            }
+
+            ?>
+        </select>
+        <span class="required"><?php echo @$msgs[1] ?></span>
+        </div>
+
+        <div>
+        <label for="notification">Select Notification</label>
+        <select name="notification-id" id="notification">
+            <option value=""> &nbsp; </option>
+            <?php
+            //loop through list of notifications. make two arrays in model: $notificationIds, $notificationInfo
+            for ($i = 0; $i<sizeof($notifIds); $i++){
+                $note =   $notifInfo[$i]['notification_id'] . ', ' .
+                    $notifInfo[$i]['name'] .', '.
+                    $notifInfo[$i]['type'];
+                echo "<option value='$notifIds[$i]'>$note</option>";
+            }
+            ?>
+        </select>
+        <span class="required"><?php echo @$msgs[2] ?></span>
+        </div>
+
+        <div>
+        <label for="date">Select Start Date</label>
+        <input type="date" name="date" id="date">
+        <span class="required"><?php echo @$msgs[3] ?></span>
+        </div>
+
+        <div>
+        <label for="time">Select Time</label>
+        <input type="time" name="time" id="time">
+        <span class="required"><?php echo @$msgs[4] ?></span>
+        </div>
+
+        <div>
+        <label for="freq">Select Frequency</label>
+        <input type="number" name="frequency" id="freq">
+        <span class="required"><?php echo @$msgs[5] ?></span>
+        </div>
+
+        <input type="hidden" name="submitCheck" value="true"><span class="required">
+        <input type="submit">
+    </form>
+</div>

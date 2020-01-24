@@ -1,0 +1,79 @@
+
+
+<div class="left-indent">
+    <h1>Update Client Notification</h1>
+    <br>
+    <form class="form" method="post" action="<?php echo htmlspecialchars('?page=client-notification&action=update&id=').$id.'&cid='.$line[1]?>">
+
+        <div>
+        <label for="client">Select Client</label>
+        <select name="client-id" id="client">
+            <?php
+            foreach($clientInfo as $record){
+                $val = $record['id'];
+                $client = $record['id'] . ', ' .
+                    $record['company_name'] .', '.
+                    $record['contact_fname'] .', ' .
+                    $record['contact_lname'];
+
+                //make sure the appropriate client is selected
+                if($record['id'] == $line[1]){
+                    echo "<option value='$val' selected >$client</option>";
+                }
+                else{
+                    echo "<option value='$val'>$client</option>";
+                }
+            }
+
+            ?>
+        </select>
+        <span class="required"><?php echo @$msgs[1] ?></span>
+        </div>
+
+        <div>
+        <label for="notification">Select Notification</label>
+        <select name="notification-id" id="notification">
+            <?php
+            //loop through list of notifications. make two arrays in model: $notificationIds, $notificationInfo
+            foreach($notifInfo as $record){
+
+                $val = $record['notification_id']; //get the notification id from the existing record
+                $note = $record['notification_id'] . ', ' .
+                    $record['name'] .', '.
+                    $record['type'];
+
+                //make sure the appropriate notification is selected
+                if($record['notification_id'] == $line[2]){
+                    echo "<option value='$val' selected >$note</option>";
+                }
+                else{
+                    echo "<option value='$val'>$note</option>";
+                }
+            }
+            ?>
+        </select>
+        <span class="required"><?php echo @$msgs[2] ?></span>
+        </div>
+
+        <div>
+        <label for="date">Select Start Date</label>
+        <input type="date" name="date" id="date" value="<?php echo$line[3]; ?>">
+        <span class="required"><?php echo @$msgs[3] ?></span>
+        </div>
+
+        <div>
+        <label for="time">Select Time</label>
+        <input type="time" name="time" id="time" value="<?php echo$line[4]; ?>">
+        <span class="required"><?php echo @$msgs[4] ?></span>
+        </div>
+
+        <div>
+        <label for="freq">Select Frequency</label>
+        <input type="number" name="frequency" id="freq" value=<?php echo$line[5]; ?>>
+        <span class="required"><?php echo @$msgs[5] ?></span>
+        </div>
+
+        <input type="hidden" name="submitCheck" value="true">
+        <input type="submit">
+    </form>
+</div>

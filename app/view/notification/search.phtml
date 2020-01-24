@@ -1,0 +1,25 @@
+
+<div class="left-indent">
+    <h1>Search Notifications</h1>
+    <br>
+    <form class="form" method="post" action="<?php echo htmlspecialchars('?page=notification&action=searchResult'); ?>">
+
+        <div>
+        <label for="field">Search field</label>
+        <select name="field" id="field" >
+            <option value=""> &nbsp; </option>
+            <option value="notification_id">Notification ID</option>
+            <option value="name">Notification name</option>
+            <option value="type">Notification type</option>
+            <option value="status">Notification status</option>
+        </select>
+        </div>
+
+        <div>
+        <label for="searchTerm">Search term </label>
+        <input type="text" id="searchTerm" name="searchTerm">
+        </div>
+
+        <input type="submit">
+    </form>
+</div>

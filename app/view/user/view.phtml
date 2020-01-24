@@ -1,0 +1,36 @@
+
+        <div class="left-indent">
+            <h1>View Users</h1>
+            <br>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Position</th>
+                    <th>Username</th>
+                    <th>Status</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <?php
+                foreach ($contents as $line){
+                    echo '<tr>';
+                    foreach ($line as $item){
+                        echo "<td>$item</td>";
+                    }
+                    if($line['status'] == 'archived'){
+                        echo '<td class="sub-menu1-color1"><a href="?page=user&action=activate&id=' . $line['id'] . ' ">Activate</a></td>';
+                    }
+                    else{
+                        echo '<td class="sub-menu1-color2"><a href="?page=user&action=archive&id=' . $line['id'] . ' ">Archive</a></td>';
+                    }
+                    echo '<td class="sub-menu1"><a href="?page=user&action=update&id=' . $line['id'] . ' ">Update</a></td>';
+                    echo '</tr>';
+                }
+                ?>
+            </table>
+
+        </div>

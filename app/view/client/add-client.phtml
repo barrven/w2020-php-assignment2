@@ -1,0 +1,56 @@
+
+
+<div class="left-indent">
+    <h1>Add Client</h1>
+    <br>
+    <p class="required">*Required Field</p><br>
+    <form class="form" method="post" action="<?php echo htmlspecialchars('?page=client&action=add')?>">
+
+        <div>
+        <label for="company_name">Company Name</label>
+        <input type="text" name="company_name" id="company_name" value="<?php echo @$_POST['company_name']?>">
+        <span class="required">* <?php echo @$errorMsg[0]; ?></span>
+        </div>
+
+        <div>
+        <label for="contact_fname">Contact First Name</label>
+        <input type="text" name="contact_fname" id="contact_fname" value="<?php echo @$_POST['contact_fname']?>">
+        <span class="required">* <?php echo @$errorMsg[1]; ?></span>
+        </div>
+
+        <div>
+        <label for="contact_lname">Contact Last Name</label>
+        <input type="text" name="contact_lname" id="contact_lname" value="<?php echo @$_POST['contact_lname']?>">
+        <span class="required">* <?php echo @$errorMsg[2]; ?></span>
+        </div>
+
+        <div>
+        <label for="company_phone">Main Phone</label>
+        <input type="tel" name="company_phone" id="company_phone" value="<?php echo @$_POST['company_phone']?>">
+        <span class="required">* <?php echo @$errorMsg[3]; ?></span>
+        </div>
+
+        <div>
+        <label for="company_cell">Cell Phone</label>
+        <input type="tel" name="company_cell" id="company_cell" value="<?php echo @$_POST['company_cell']?>">
+        <span class="required">* <?php echo @$errorMsg[4]; ?></span>
+        </div>
+
+        <div>
+        <label for="company_email">Email Address</label>
+        <input type="text" name="company_email" id="company_email" value="<?php echo @$_POST['company_email']?>">
+        <span class="required">* <?php echo @$errorMsg[5]; ?></span>
+        </div>
+
+        <div>
+        <label for="website">Website</label>
+        <input type="text" name="website" id="website" value="<?php echo @$_POST['website']?>">
+        <span><?php echo @$errorMsg[6]; ?></span>
+        </div>
+
+        <input type="hidden" name="submitCheck" value="true">
+        <input type="submit">
+    </form>
+
+</div>
+

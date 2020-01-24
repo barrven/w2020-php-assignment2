@@ -1,0 +1,14 @@
+id,company_name,contact_fname,contact_lname,company_phone,company_cell,company_email,website
+0,ABC,Miroslav,Kemensky,8889995141,847-654-8894,m.kemensky@abc.ca,http://abc.ca,archived
+5,Testing Inc,Barrington,Venables,6473893173,6473893173,barringtonvenables@gmail.com,http://testing.ca,archived
+6,Testing Inc,Barrington,Venables,6473893173,6473893173,barringtonvenables@gmail.com,,archived
+7,Testing Inc,Barrington,Venables,6473893173,6473893173,barringtonvenables@gmail.com,,archived
+8,Testing Inc,Barrington,Venables,6473893173,6473893173,barringtonvenables@gmail.com,http://google.ca,archived
+9,xxx,Nafisa,Alyass,6473893173,6473893173,barringtonvenables@gmail.com,http://amazon.ca,active
+10,Testing Inc,Barrington,Venables,6473893173,6473893173,barringtonvenables@gmail.com,,active
+11,Testing Inc,Barrington,Venables,6473893173,6473893173,barringtonvenables@gmail.com,http://amazon.ca,active
+12,Fusaros Inc,Michael,Richards,654-978-6544,123-456-9888,m.richards@fusaros.ca,http://fusaros.ca,active
+13,Cosmo Music,Sarah,Silverman,456-789-6544,416-654-9877,s.silverman@cosmo.ca,,active
+14,Testing Inc,Barrington,Venables,6473893173,6473893173,barringtonvenables@gmail.com,,active
+15,Testing Inc,Barrington,Venables,6473893173,6473893173,barringtonvenables@gmail.com,,archived
+17,Testing Inc,Barrington,Venables,6473893173,6473893173,barringtonvenables@gmail.com,http://amazon.ca,active

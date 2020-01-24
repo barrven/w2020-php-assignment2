@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $page?></title>
+    <meta name="description" content="Web Programming COMP1230 Assignment 2">
+    <meta name="author" content="Barrington Venables">
+    <meta name="student number" content="101189284">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <h1><a href="?page=home" class="plainAnchor">ABC Accounting Online Notification Manager</a></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a class="<?php echo ($page =='client')? 'activeTab' : ''?>" href="?page=client&action=menu">Manage Clients</a></li> <!--menu is the default view for each model-->
+            <li><a class="<?php echo ($page =='notification')? 'activeTab' : ''?>" href="?page=notification&action=menu">Manage Notifications</a></li>
+            <li><a class="<?php echo ($page =='client-notification')? 'activeTab' : ''?>" href="?page=client-notification&action=menu">Manage Client-Notifications</a></li>
+            <li><a class="<?php echo ($page =='user')? 'activeTab' : ''?>" href="?page=user&action=menu">User Menu</a></li>
+            <?php
+                if(@$_SESSION['authorized']){
+                    echo '<li id="user-badge"><a href="?page=home&action=logout"><strong>Logout</strong></a></li>';
+                }
+            ?>
+            <li id="user-badge"><a href="?page=home"><strong><?php echo (@$_SESSION['authorized'])? @$_SESSION['username'] : 'Sign in' ?></strong></a></li>
+        </ul>
+    </nav>
+
+    <hr>
+    <br>
+    <div>
+        <?php
+            if(file_exists($subMenu)  && @$_SESSION['authorized'] == true){
+                include $subMenu; //change this logic when implementing login
+            }
+        ?>
+    </div>
+    <br>
+    <div class="view-content">
+        <?php include $view_content; ?>
+    </div>
+
+
+    <footer>
+        &copy;2019 by Barrington Venables
+        <br>
+        <?php echo @$sourceLink?>
+    </footer>
+</body>
+</html>

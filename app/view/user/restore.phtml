@@ -1,0 +1,19 @@
+
+    <div class="left-indent">
+        <h1>Backup Database</h1>
+        <br>
+        <h3><?php echo $message; ?></h3><br><br>
+
+
+        <form class="form" method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars('?page=user&action=restore'); ?>">
+
+            <div>
+                <label for="field">Select SQL File</label>
+                <input type="file" id="bkFile" name="bkFile">
+            </div>
+            <br><br>
+
+            <input type="hidden" name="submitCheck" value="true">
+            <input type="submit" value="Restore From File">
+        </form>
+    </div>

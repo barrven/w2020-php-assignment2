@@ -1,0 +1,18 @@
+
+
+<div class="left-indent">
+    <div class="sub-menu1">
+        <h3><?php echo $message; ?></h3>
+        <br>
+        <ul>
+            <li><a href="?page=client-notification&action=viewNoteByClient&id=<?php echo getParam('cid')?> ">Back</a></li>
+            <?php
+            if($allowed){
+                echo "<li><a href='?page=client-notification&action=commit-activate&id=$id&cid=$cid'>
+                                Yes, activate client notification</a></li>";
+            }
+            ?>
+        </ul>
+    </div>
+
+</div>

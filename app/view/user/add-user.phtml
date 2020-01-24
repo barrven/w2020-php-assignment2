@@ -1,0 +1,67 @@
+
+
+<div class="left-indent">
+    <h1>Add User</h1>
+    <br>
+    <p class="required">*Required Field</p><br>
+    <form class="form" method="post" action="<?php echo htmlspecialchars('?page=user&action=add')?>">
+
+        <div>
+            <label for="position">Position</label>
+            <select id="position" name="position">
+                <option value="Manager" <?php echo (@$_POST['position'] == 'Manager')? 'selected': ''?>>Manger</option>
+                <option value="Senior Accountant" <?php echo (@$_POST['position'] == 'Senior Accountant')? 'selected': ''?>>Senior Accountant</option>
+                <option value="Junior Accountant" <?php echo (@$_POST['position'] == 'Junior Accountant')? 'selected': ''?>>Junior Accountant</option>
+                <option value="Chartered Accountant" <?php echo (@$_POST['position'] == 'Chartered Accountant')? 'selected': ''?>>Chartered Accountant</option>
+                <option value="Book Keeper" <?php echo (@$_POST['position'] == 'Book Keeper')? 'selected': ''?>>Book Keeper</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="fname">First Name</label>
+            <input type="text" name="fname" id="fname" value="<?php echo @$_POST['fname']?>">
+            <span class="required">* <?php echo @$errorMsg[0]; ?></span>
+        </div>
+
+        <div>
+            <label for="lname">Last Name</label>
+            <input type="text" name="lname" id="lname" value="<?php echo @$_POST['lname']?>">
+            <span class="required">* <?php echo @$errorMsg[1]; ?></span>
+        </div>
+
+        <div>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" value="<?php echo @$_POST['email']?>">
+            <span class="required">* <?php echo @$errorMsg[2]; ?></span>
+        </div>
+
+        <div>
+            <label for="phone">Phone</label>
+            <input type="tel" name="phone" id="phone" value="<?php echo @$_POST['phone']?>">
+            <span class="required">* <?php echo @$errorMsg[3]; ?></span>
+        </div>
+
+        <div>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" value="<?php echo @$_POST['username']?>">
+            <span class="required">* <?php echo @$errorMsg[4]; ?></span>
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+            <span class="required">* <?php echo @$errorMsg[5]; ?></span>
+        </div>
+
+        <div>
+            <label for="passConfirm">Password Confirm</label>
+            <input type="password" name="passConfirm" id="passConfirm">
+            <span class="required">* <?php echo @$errorMsg[6]; ?></span>
+        </div>
+
+        <input type="hidden" name="submitCheck" value="true">
+        <input type="submit">
+    </form>
+
+</div>
+

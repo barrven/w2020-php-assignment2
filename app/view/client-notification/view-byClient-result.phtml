@@ -1,0 +1,43 @@
+
+<div class="left-indent">
+    <h1>Notifications for Client #<?php echo getParam('id');?></h1>
+    <br>
+    <table>
+        <tr>
+            <th>C-N ID</th>
+            <th>N ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Start Date</th>
+            <th>Time</th>
+            <th>Frequency</th>
+            <th>Status</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <?php
+        //displays all notification parameters in table
+        for ($i = 0; $i< sizeof($cnList); $i++){
+            echo '<tr>';
+
+            $fields = $cnList[$i];
+            foreach ($fields as $field){
+                echo '<td>' . $field . '</td>';
+            }
+            if(trim($fields['cn_status']) == 'archived'){
+                echo '<td class="sub-menu1-color1"><a href="?page=client-notification&action=activate&id='
+                    .$fields['cn_id'].'&cid='.getParam('id').'&nid='.$fields['notification_id'].'">Activate</a></td>';
+            }
+            else{
+                echo '<td class="sub-menu1-color2"><a href="?page=client-notification&action=archive&id='
+                    .$fields['cn_id'].'&cid='.getParam('id').'&nid='.$fields['notification_id'].'">Archive</a></td>';
+            }
+            echo '<td class="sub-menu1"><a href="?page=client-notification&action=update&id='
+                .$fields['cn_id'].' ">Update</a></td>';
+            echo '</tr>';
+        }
+
+        ?>
+    </table>
+
+</div>

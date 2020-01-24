@@ -1,0 +1,38 @@
+
+<div class="left-indent">
+    <h1>View Client Notifications</h1>
+    <br>
+    <table>
+        <tr>
+            <th>CN-ID</th>
+            <th>Client ID</th>
+            <th>Notification ID</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Frequency</th>
+            <th>Status</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <?php
+        //displays search results in view table
+        if(isset($cn_List)) {
+                foreach ($cn_List as $line){
+                    echo '<tr>';
+                    foreach ($line as $field){
+                        echo "<td>$field</td>";
+                    }
+
+                    if($line['cn_status'] == 'archived'){
+                        echo '<td class="sub-menu1-color1"><a href="?page=client-notification&action=activate&id=' . $line['cn_id'] . ' ">Activate</a></td>';
+                    }
+                    else{
+                        echo '<td class="sub-menu1-color2"><a href="?page=client-notification&action=archive&id=' . $line['cn_id'] . ' ">Archive</a></td>';
+                    }
+                    echo '<td class="sub-menu1"><a href="?page=client-notification&action=update&id=' . $line['cn_id'] . ' ">Update</a></td>';
+                    echo '</tr>';
+            }
+        }
+        ?>
+    </table>
+</div>

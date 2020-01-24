@@ -1,0 +1,36 @@
+
+<div class="left-indent">
+    <h1>View Notifications</h1>
+    <br>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Message Content</th>
+            <th>Status</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <?php
+
+        foreach ($contents as $line){
+            echo '<tr>';
+            foreach ($line as $item){
+                echo "<td>$item</td>";
+            }
+
+            if($line['status'] == 'archived'){
+                echo '<td class="sub-menu1-color1"><a href="?page=notification&action=activate&id=' . $line['notification_id'] . ' ">Activate</a></td>';
+            }
+            else{
+                echo '<td class="sub-menu1-color2"><a href="?page=notification&action=archive&id=' . $line['notification_id'] . ' ">Archive</a></td>';
+            }
+
+            echo '<td class="sub-menu1"><a href="?page=notification&action=update&id=' . $line['notification_id'] . ' ">Update</a></td>';
+            echo '</tr>';
+        }
+
+        ?>
+    </table>
+</div>

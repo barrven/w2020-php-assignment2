@@ -1,0 +1,33 @@
+
+<div class="left-indent">
+    <h1>View Clients With Notifications</h1>
+    <br>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Company</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Phone</th>
+            <th>Cell</th>
+            <th>Email</th>
+            <th>Website</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+        <?php
+
+        for ($i = 0; $i< sizeof($clientsList); $i++){
+            echo '<tr>';
+            $fields = $clientsList[$i];
+            foreach ($fields as $field){
+                echo '<td>' . $field . '</td>';
+            }
+            echo '<td class="sub-menu1"><a href="?page=client-notification&action=viewNoteByClient&id=' . $fields['id'] . ' ">View Notifications</a></td>';
+            echo '</tr>';
+        }
+
+        ?>
+    </table>
+
+</div>

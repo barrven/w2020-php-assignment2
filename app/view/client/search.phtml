@@ -1,0 +1,30 @@
+
+    <div class="left-indent">
+        <h1>Search Clients</h1>
+        <br>
+        <form class="form" method="post" action="<?php echo htmlspecialchars('?page=client&action=searchResult'); ?>">
+
+            <div>
+            <label for="field">Search field</label>
+            <select name="field" id="field" >
+                <option value=""> &nbsp;&nbsp;</option>
+                <option value="id">Client ID</option>
+                <option value="company_name">Company</option>
+                <option value="contact_fname">Client first name</option>
+                <option value="contact_lname">Client last name</option>
+                <option value="company_phone">Client phone</option>
+                <option value="company_cell">Client cell</option>
+                <option value="company_email">Client email</option>
+                <option value="status">Client status</option>
+            </select>
+            </div>
+
+            <div>
+            <label for="searchTerm">Search term </label>
+            <input type="text" id="searchTerm" name="searchTerm">
+            </div>
+
+            <input type="hidden" name="submitCheck" value="true">
+            <input type="submit">
+        </form>
+    </div>
